@@ -4,200 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Muntaha Yasir</title>
+    
     <style>
+        /* --- 1. Global Reset & Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #ff5722; /* Orange/Pink accent for highlights */
+            --secondary-color: #2c3e50; /* Dark Blue/Grey background */
+            --text-light: #ecf0f1; /* Off-white text */
+            --text-dark: #34495e; /* Darker text */
+            --card-bg: #34495e;
+            --spacing: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-           /* --- 1. Global Reset & Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
 
-:root {
-    --primary-color: #ff5722; /* Orange/Pink accent for highlights */
-    --secondary-color: #2c3e50; /* Dark Blue/Grey background */
-    --text-light: #ecf0f1; /* Off-white text */
-    --text-dark: #34495e; /* Darker text */
-    --card-bg: #34495e;
-    --spacing: 20px;
-}
+        /* --- 2. Header & Navigation --- */
+        .main-header {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: var(--spacing);
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-    line-height: 1.6;
-}
+        .navbar a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 15px;
+            padding: 5px 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
 
-/* --- 2. Header & Navigation --- */
-.main-header {
-    background-color: var(--card-bg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        .navbar a:hover {
+            color: var(--text-light);
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    padding: var(--spacing);
-}
+        /* --- 3. Main Layout & Headings (Intro Section ke liye) --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 var(--spacing);
+            text-align: center; /* Intro ko center karne ke liye */
+        }
+        
+        .intro-box {
+            background-color: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+        }
 
-.navbar a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 15px;
-    padding: 5px 10px;
-    transition: color 0.3s, background-color 0.3s;
-}
+        .intro-box h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .intro-box p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.navbar a:hover {
-    color: var(--text-light);
-    background-color: var(--primary-color);
-    border-radius: 4px;
-}
 
-/* --- 3. Main Layout & Headings --- */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 var(--spacing);
-}
-
-.main-title {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 50px;
-    text-transform: uppercase;
-}
-
-.content-section {
-    background-color: var(--card-bg);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.section-heading {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-/* --- 4. List Styling (Skills, Projects, Contact) --- */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-list li,
-.project-list li,
-.contact-list li {
-    background-color: #4a637d; /* Slightly lighter card color */
-    padding: 15px;
-    margin-bottom: 12px;
-    border-left: 5px solid var(--primary-color);
-    border-radius: 4px;
-    font-size: 1.05em;
-    transition: background-color 0.3s;
-}
-
-.skill-list li:hover,
-.project-list li:hover {
-    background-color: #55708a;
-}
-
-/* For bold text (skill/project names) */
-li strong {
-    color: var(--primary-color);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* --- 5. Contact Links Styling --- */
-.contact-list a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-.contact-list a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
+        /* --- 4. Doosre styles yahan shamil nahi hain, sirf intro ke liye zaruri hain --- */
     </style>
 </head>
 <body>
-<header class="main-header">
-    <nav class="navbar">
-        <a href="index.html">About Me</a>
-        <a href="index.html">My Projects</a>
-    </nav>
-</header>
-
-<div class="container">
-    <h1 class="main-title">My Projects & Skills</h1>
-
-    <section id="skills-section" class="content-section">
-        <h2 class="section-heading">My Skills</h2>
-        <ul class="skill-list">
-            <li>
-                HTML: Proficient in creating well-structured webpages using semantic elements, organized content layouts, and clean markup practices.
-            </li>
-            <li>
-                CSS: Skilled in styling webpages using typography, spacing, colors, and layout techniques to create simple and visually appealing designs.
-            </li>
-            <li>
-                C++: Strong understanding of fundamental programming concepts, including variables, loops, conditions, functions, and logical problem-solving.
-            </li>
-            <li>
-                Web Design: Capable of designing clean, user-friendly interfaces with proper structure, readability, and responsive layout concepts.
-            </li>
-            <li>
-                Portfolio Development: Experienced in building basic portfolio websites that include About, Skills, Projects, and Contact sections with professional formatting.
-            </li>
-        </ul>
-    </section>
-
-    <section id="projects-section" class="content-section">
-        <h2 class="section-heading">Projects</h2>
-        <ul class="project-list">
-            <li>
-                Personal Portfolio Website: Created a clean and responsive personal portfolio using HTML and CSS. The website includes structured sections such as About, Skills, Projects, and Contact, designed with a simple layout and user-friendly interface.
-            </li>
-            <li>
-                Student Profile Webpage: Developed a basic student profile webpage showcasing academic interests, technical skills, and a personal introduction using HTML and CSS. Focused on proper formatting, alignment, and content organization.
-            </li>
-        </ul>
-    </section>
-
-    <section id="contact-section" class="content-section">
-        <h2 class="section-heading">Contact</h2>
-        <ul class="contact-list">
-            <li>
-                Email: <a href="mailto:muntaham185@gmail.com">muntaham185@gmail.com</a>
-            </li>
-            <li>
-                Contact Number: <a href="tel:+923278029054">+92 327 8029054</a>
-            </li>
-        </ul>
-    </section>
     
-</div>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html">About Me</a> 
+            <a href="projects.html">Projects & Skills</a> 
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro-box">
+            <h1>Hello, I'm Muntaha Yasir</h1>
+            <p>I am a dedicated student with a strong interest in computer science. I enjoy exploring how websites are designed and developed, and I love learning new technologies that help me improve my skills. My goal is to grow in web development and create clean, user-friendly designs. </p>
+            <p style="margin-top: 20px; color: var(--primary-color);">Click 'Projects & Skills' to see my work!</p>
+        </section>
+        
+    </div>
+</body>
 </html>
-
-
-
-
